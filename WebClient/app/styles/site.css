@@ -1,0 +1,22 @@
+﻿.control-label {
+    font-size: 1.1em;
+}
+
+footer {
+    width: 100vw;
+}
+
+.cursor-pointer {
+    cursor: pointer;
+}
+
+.whitespace-fill {
+    display: block;
+    height: 6vh;
+    width: 100vw;
+}
+
+.panel-profile {
+    height: 25vh;
+}
+

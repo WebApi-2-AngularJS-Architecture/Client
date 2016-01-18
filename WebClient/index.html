@@ -1,0 +1,76 @@
+﻿<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Web System</title>
+
+    <!-- Onload URL address -->
+    <base href="/" />
+
+    <!-- Bootstrap Core CSS -->
+    <link href="app/libs/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+
+    <!-- KendoUI Core CSS -->
+    <link href="app/libs/kendo/css/kendo.common.core.min.css" rel="stylesheet" type="text/css" />
+    <link href="app/libs/kendo/css/kendo.common.min.css" rel="stylesheet" type="text/css" />
+    <link href="app/libs/kendo/css/kendo.black.min.css" rel="stylesheet" type="text/css" />
+    <link href="app/libs/kendo/css/Black/sprite.png" rel="stylesheet" type="text/css" />
+
+    <!-- Toastr Core CSS -->
+    <link href="app/libs/toastr/toastr.min.css" rel="stylesheet" type="text/css" />
+
+    <!-- Site Core CSS -->
+    <link href="app/styles/site.css" rel="stylesheet" type="text/css" />
+
+    <!-- jQuery Core JavaScript-->
+    <script src="app/libs/jquery/jquery-2.1.4.min.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="app/libs/bootstrap/js/bootstrap.min.js"></script>
+
+    <!-- Toastr Core JavaScript -->
+    <script src="app/libs/toastr/toastr.min.js"></script>
+
+    <!-- AngularJS Core JavaScript -->
+    <script src="app/libs/angularjs/angular.min.js"></script>
+    <script src="app/libs/angularjs/angular-route.min.js"></script>
+    <script src="app/libs/angularjs/angular-cookies.min.js"></script>
+
+    <!-- KendoUI Core JavaScript -->
+    <script src="app/libs/kendo/js/kendo.ui.core.min.js"></script>
+</head>
+<body ng-app="myApp" ng-cloak>
+    <!-- Navigation -->
+    <div navigation-menu></div>
+
+    <!-- Views -->
+    <div ng-view></div>
+
+    <!-- Footer -->
+    <div footer></div>
+
+    <!-- AngularJS Config -->
+    <script src="app/config/angular-config.js"></script>
+
+    <!-- Common -->
+    <script src="app/common/notifier.js"></script>
+    <script src="app/common/data.js"></script>
+    <script src="app/pages/register/countries.js"></script>
+
+    <!-- Identity -->
+    <script src="app/identity/auth.js"></script>
+    <script src="app/identity/authorization.js"></script>
+    <script src="app/identity/identity.js"></script>
+    <script src="app/identity/login-controller.js"></script>
+    <script src="app/identity/register-controller.js"></script>
+
+    <!-- Controllers -->
+    <script src="app/pages/home/home-controller.js"></script>
+    <script src="app/pages/user/js/user-controller.js"></script>
+
+    <!-- Directives -->
+    <script src="app/directives/common/navigation-menu-directive.js"></script>
+    <script src="app/directives/common/footer-directive.js"></script>
+
+</body>
+</html>
