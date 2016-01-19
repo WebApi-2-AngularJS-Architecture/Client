@@ -60,45 +60,25 @@
                         </div>
                     </div>
                     <div class="form-group">
-                        <label for="inputFirstName" class="col-lg-5 col-md-5 col-sm-6 col-xs-5 control-label">First name</label>
+                        <label for="inputFullName" class="col-lg-5 col-md-5 col-sm-6 col-xs-5 control-label">Full name</label>
                         <div class="col-lg-7 col-md-7 col-sm-6 col-xs-7">
                             <input type="text"
                                    class="form-control"
-                                   id="inputFirstName"
-                                   name="firstNameInputField"
-                                   placeholder="First name"
-                                   ng-model="vm.user.firstName">
+                                   id="inputFullName"
+                                   name="fullNameInputField"
+                                   placeholder="Full name"
+                                   ng-model="vm.user.fullName">
                         </div>
                     </div>
                     <div class="form-group">
-                        <label for="inputLastName" class="col-lg-5 col-md-5 col-sm-6 col-xs-5 control-label">Last name</label>
+                        <label for="inputBirthdate" class="col-lg-5 col-md-5 col-sm-6 col-xs-5 control-label">Date of birth</label>
                         <div class="col-lg-7 col-md-7 col-sm-6 col-xs-7">
                             <input type="text"
                                    class="form-control"
-                                   id="inputLastName"
-                                   name="lastNameInputField"
-                                   placeholder="Last name"
-                                   ng-model="vm.user.lastName">
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <label for="inputEgn" class="col-lg-5 col-md-5 col-sm-6 col-xs-5 control-label">EGN</label>
-                        <div class="col-lg-7 col-md-7 col-sm-6 col-xs-7">
-                            <input type="text"
-                                   class="form-control"
-                                   id="inputEgn"
-                                   name="egnInputField"
-                                   placeholder="EGN"
-                                   ng-model="vm.user.egn">
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <label for="select" class="col-lg-5 col-md-5 col-sm-6 col-xs-5 control-label">Country</label>
-                        <div class="col-lg-7 col-md-7 col-sm-6 col-xs-7">
-                            <select class="form-control" id="select" ng-init="vm.event.Country='Select country'">
-                                <option selected="selected" value="Select country">Select country</option>
-                                <option ng-repeat="country in vm.countries" value="{{country.name}}">{{country.name}}</option>
-                            </select>
+                                   id="inputBirthdate"
+                                   name="birthdayInputField"
+                                   placeholder="Month/Day/Year - 05/23/1994"
+                                   ng-model="vm.user.dateOfBirth">
                         </div>
                     </div>
                     <div class="form-group">

@@ -122,9 +122,10 @@
     <Content Include="app\libs\kendo\js\kendo.dropdownlist.min.js" />
     <Content Include="app\libs\kendo\js\kendo.timepicker.min.js" />
     <Content Include="app\libs\kendo\js\kendo.ui.core.min.js" />
+    <Content Include="app\pages\events\html\active-events.html" />
+    <Content Include="app\pages\events\js\events-controller.js" />
     <Content Include="app\pages\register\countries.js" />
     <Content Include="app\pages\user\html\change-password.html" />
-    <Content Include="app\pages\user\html\profile.html" />
     <Content Include="app\pages\user\js\user-controller.js" />
     <Content Include="packages.config" />
     <Content Include="ApplicationInsights.config">

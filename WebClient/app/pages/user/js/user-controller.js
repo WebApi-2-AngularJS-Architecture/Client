@@ -8,17 +8,6 @@
 
         vm.currentUser = identity.getCurrentUser();
 
-        (function () {
-            data.get('api/User/GetUserData', {
-                UserName: vm.currentUser.userName
-            }).then(function (result) {
-                vm.currentUserDetails = result;
-                notifier.info('User data successfully loaded.');
-            }, function (err) {
-                notifier.warning('Could not load current user data.');
-            });
-        })()
-
         vm.changePassword = function (request) {
             data.post('api/Account/ChangePassword', request)
                 .then(function (result) {

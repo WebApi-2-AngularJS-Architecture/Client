@@ -8,14 +8,14 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="#/">Web system</a>
+            <a class="navbar-brand" href="#/">Birthday Presents Picker</a>
         </div>
 
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav">
                 <li><a href="#/Home">Home<span class="sr-only">(current)</span></a></li>
-                <li><a href="#/About">About</a></li>
-                <li><a href="#/Contacts">Contacts</a></li>
+                <li><a href="#/Events/Active">Active events</a></li>
+                <li><a href="#/Events/Past">Past events</a></li>
             </ul>
             <div class="nav navbar-nav navbar-right">
                 <ul ng-hide="identity.isAuthenticated()" class="nav navbar-nav navbar-right">
@@ -26,10 +26,7 @@
                     <li class="dropdown">
                         <a data-toggle="dropdown" class="dropdown-toggle">{{identity.getCurrentUser().userName}}<span class="caret"></span></a>
                         <ul class="dropdown-menu">
-                            <li><a href="#/User/Profile">Profile</a></li>
                             <li><a href="#/User/Profile/ChangePassword">Change Password</a></li>
-                            <li><a href="#/User/Profile/Edit">Edit profile</a></li>
-                            <li><a href="#/Settings">Settings</a></li>
                             <li class="divider"></li>
                             <li><a href="#/" ng-click="logout()">Logout</a></li>
                         </ul>

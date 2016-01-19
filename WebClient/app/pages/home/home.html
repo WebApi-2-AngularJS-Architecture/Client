@@ -1,5 +1,6 @@
 ﻿<div ng-controller="HomeController as vm">
     <div class="text-center jumbotron">
-        <h1>Welcome!</h1>
+        <h1 ng-if="vm.currentUser">Welcome, {{vm.currentUser.userName}}!</h1>
+        <h1 ng-if="!vm.currentUser">Welcome, guest!</h1>
     </div>
 </div>

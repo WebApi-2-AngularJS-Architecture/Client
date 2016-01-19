@@ -26,9 +26,9 @@
                 templateUrl: 'app/pages/user/html/change-password.html',
                 controller: 'LoginController'
             })
-            .when('/User/Profile', {
-                templateUrl: 'app/pages/user/html/profile.html',
-                controller: 'UserController'
+            .when('/Events/Active', {
+                templateUrl: 'app/pages/events/html/active-events.html',
+                controller: 'EventsController'
             })
             .when('/unauthorized', {
                 template: '<h1 class="text-center">Unauthorized</h1>'
