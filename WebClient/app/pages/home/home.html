@@ -2,5 +2,6 @@
     <div class="text-center jumbotron">
         <h1 ng-if="vm.currentUser">Welcome, {{vm.currentUser.userName}}!</h1>
         <h1 ng-if="!vm.currentUser">Welcome, guest!</h1>
+        <p ng-if="!vm.currentUser">Please <a href="#/Register">Register</a> or <a href="#/Login">Login</a> to use the full functionality of our system</p>
     </div>
 </div>

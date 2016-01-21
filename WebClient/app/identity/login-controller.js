@@ -1,7 +1,7 @@
 (function () {
     'use strict';
 
-    function LoginController($scope, $location, notifier, identity, auth, VALIDATION) {
+    function LoginController($scope, $location, $route, notifier, identity, auth, VALIDATION) {
         var vm = this;
 
         vm.validation = VALIDATION;
@@ -33,10 +33,11 @@
                 }
 
                 $location.path('/');
+                $route.reload('/');
             })
         }
     }
 
     angular.module('myApp.controllers')
-        .controller('LoginController', ['$scope', '$location', 'notifier', 'identity', 'auth', 'VALIDATION', LoginController]);
+        .controller('LoginController', ['$scope', '$location','$route', 'notifier', 'identity', 'auth', 'VALIDATION', LoginController]);
 }());
