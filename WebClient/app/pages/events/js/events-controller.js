@@ -6,22 +6,19 @@
 
         vm.currentUser = identity.getCurrentUser();
 
-        var eventsRequestObject = {
-            UserName: vm.currentUser.userName
+        if (vm.currentUser) {
+            var eventsRequestObject = {
+                UserName: vm.currentUser.userName
+            }
+
+            getAllActiveEvents(eventsRequestObject);
+
+            data.get('api/Presents/All').then(function (result) {
+                vm.availablePresents = result;
+            }, function (err) {
+                notifier.err('Failure loading presents.');
+            })
         }
-
-        data.get('api/Events/Active', eventsRequestObject).then(function (result) {
-            vm.activeEvents = result;
-        }, function (err) {
-            notifier.error('Failure loading active events.');
-        });
-
-        data.get('api/Events/Presents').then(function (result) {
-            vm.availablePresents = result;
-        }, function (err) {
-            notifier.err('Failure loading presents.');
-        })
-
 
         vm.parseDate = function (date) {
             return date.slice(0, 10);
@@ -34,13 +31,35 @@
                 BirthdayPresentEventId: eventId
             };
 
-            console.log(requestObject);
-
             data.post('api/Votes/Create', requestObject).then(function (result) {
-                notifier.info(result)
+                notifier.info('Vote successful')
             }, function (err) {
-                console.log(err);
-                notifier.error('Voting failed.');
+                notifier.error('Cannot vote twice');
+            });
+        }
+
+        vm.closeEvent = function(eventId) {
+            var requestData = {
+                RequestUsername: vm.currentUser.userName,
+                EventId: eventId
+            };
+
+            data.post('api/Events/Cancel', requestData).then(function (result) {
+                notifier.info('Event closed successfully');
+
+                getAllActiveEvents({
+                    UserName: vm.currentUser.userName
+                });
+            }, function (err) {
+                notifier.error('Cannot close event');
+            });
+        }
+
+        function getAllActiveEvents(eventsRequestObject) {
+            data.get('api/Events/Active', eventsRequestObject).then(function (result) {
+                vm.activeEvents = result;
+            }, function (err) {
+                notifier.error('Failure loading active events.');
             });
         }
     }

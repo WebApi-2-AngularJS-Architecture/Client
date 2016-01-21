@@ -13,7 +13,7 @@
                 notifier.success('Registration successful!');
                 $location.path('/Login');
             }, function (error) {
-                notifier.error(error);
+                notifier.error('Registration failed. Make sure your data is filled properly. Username & email duplication are not allowed.');
             })
         }
 
