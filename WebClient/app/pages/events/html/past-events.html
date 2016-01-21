@@ -17,13 +17,16 @@
                 </div>
                 <div class="col-lg-12">
                     <div ng-repeat="(voteName, usernames) in event.Votes">
-                        <h4><strong>{{voteName}}: {{usernames.length}} votes</strong></h4>
-                        <span ng-repeat="username in usernames">/ {{username}} </span>
+                        <h4 class="text-info"><strong>{{voteName}}: </strong><span class="label label-success">{{usernames.length}} votes</span></h4>
+                        <span ng-repeat="username in usernames" class="text-primary" ng-if="$index < usernames.length-1">{{username}}, </span>
+                        <span class="text-primary">{{usernames[usernames.length-1]}}</span>
                     </div>
                 </div>
                 <div class="col-lg-12">
-                    <h4><strong>Users not voted: {{event.UsersNotVoted.length}} </strong></h4>
-                    <span ng-repeat="username in event.UsersNotVoted" class="text-danger">/ {{username}} </span>
+                    <h4 class="text-info"><strong>Not voted: <span class="label label-danger">{{event.UsersNotVoted.length}} person</span></strong></h4>
+                    <span ng-repeat="username in event.UsersNotVoted" class="text-primary" ng-if="$index < event.UsersNotVoted.length-1">{{username}}, </span>
+                    <span class="text-primary">{{event.UsersNotVoted[event.UsersNotVoted.length-1]}}</span>
+
                 </div>
             </div>
         </div>
