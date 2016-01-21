@@ -124,8 +124,10 @@
     <Content Include="app\libs\kendo\js\kendo.ui.core.min.js" />
     <Content Include="app\libs\momentjs\momentjs.min.js" />
     <Content Include="app\pages\events\html\active-events.html" />
+    <Content Include="app\pages\events\html\create-event.html" />
     <Content Include="app\pages\events\html\past-events.html" />
     <Content Include="app\pages\events\js\active-events-controller.js" />
+    <Content Include="app\pages\events\js\create-event-controller.js" />
     <Content Include="app\pages\events\js\past-events-controller.js" />
     <Content Include="app\pages\register\countries.js" />
     <Content Include="app\pages\user\html\change-password.html" />

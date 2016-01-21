@@ -14,8 +14,9 @@
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav">
                 <li><a href="#/Home">Home<span class="sr-only">(current)</span></a></li>
-                <li><a href="#/Events/Active">Active events</a></li>
-                <li><a href="#/Events/Past">Past events</a></li>
+                <li ng-if="identity.isAuthenticated()"><a href="#/Events/Active">Active events</a></li>
+                <li ng-if="identity.isAuthenticated()"><a href="#/Events/Past">Past events</a></li>
+                <li ng-if="identity.isAuthenticated()"><a href="#/Events/Create">Create event</a></li>
             </ul>
             <div class="nav navbar-nav navbar-right">
                 <ul ng-hide="identity.isAuthenticated()" class="nav navbar-nav navbar-right">

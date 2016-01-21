@@ -30,10 +30,14 @@
                 templateUrl: 'app/pages/events/html/active-events.html',
                 controller: 'ActiveEventsController'
             })
-             .when('/Events/Past', {
+            .when('/Events/Past', {
                  templateUrl: 'app/pages/events/html/past-events.html',
                  controller: 'PastEventsController'
-             })
+            })
+            .when('/Events/Create', {
+                templateUrl: 'app/pages/events/html/create-event.html',
+                controller: 'CreateEventController'
+            })
             .when('/unauthorized', {
                 template: '<h1 class="text-center">Unauthorized</h1>'
             })
@@ -45,7 +49,7 @@
     angular.module('myApp.filters', []);
     angular.module('myApp.controllers', ['myApp.services']);
     angular.module('myApp', ['ngRoute', 'ngCookies', 'myApp.controllers', 'myApp.directives', 'myApp.filters']).
-        config(['$routeProvider', '$httpProvider','$locationProvider', config])
+        config(['$routeProvider', '$httpProvider', '$locationProvider', config])
         .value('toastr', toastr)
         .value('moment', moment)
         .constant('baseServiceUrl', 'http://localhost:38013/')
