@@ -16,12 +16,14 @@ footer {
     height: 6vh;
     width: 100vw;
 }
-
+.btn-vote {
+    padding-top:15px;
+}
 .panel-profile {
     height: 25vh;
 }
 
-.birthday-date {
-    margin-bottom: 10px;
+.header-line {
+    margin-top:15px;
+    border-top: 1px solid black;
 }
-

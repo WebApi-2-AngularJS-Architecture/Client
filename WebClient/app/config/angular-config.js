@@ -44,9 +44,10 @@
     angular.module('myApp.directives', []);
     angular.module('myApp.filters', []);
     angular.module('myApp.controllers', ['myApp.services']);
-    angular.module('myApp', ['ngRoute', 'ngCookies', 'myApp.controllers', 'myApp.directives', 'myApp.filters', 'kendo.directives']).
+    angular.module('myApp', ['ngRoute', 'ngCookies', 'myApp.controllers', 'myApp.directives', 'myApp.filters']).
         config(['$routeProvider', '$httpProvider','$locationProvider', config])
         .value('toastr', toastr)
+        .value('moment', moment)
         .constant('baseServiceUrl', 'http://localhost:38013/')
         .constant('VALIDATION', {
             'minEmailLength': 3,

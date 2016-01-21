@@ -122,6 +122,7 @@
     <Content Include="app\libs\kendo\js\kendo.dropdownlist.min.js" />
     <Content Include="app\libs\kendo\js\kendo.timepicker.min.js" />
     <Content Include="app\libs\kendo\js\kendo.ui.core.min.js" />
+    <Content Include="app\libs\momentjs\momentjs.min.js" />
     <Content Include="app\pages\events\html\active-events.html" />
     <Content Include="app\pages\events\html\past-events.html" />
     <Content Include="app\pages\events\js\active-events-controller.js" />

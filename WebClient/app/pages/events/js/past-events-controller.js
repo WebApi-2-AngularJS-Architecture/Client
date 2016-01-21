@@ -1,7 +1,7 @@
 ﻿(function () {
     'use strict';
 
-    function PastEventsController($scope, $location, data, identity, notifier) {
+    function PastEventsController($scope, $location, data, identity, notifier, moment) {
         var vm = this;
 
         vm.currentUser = identity.getCurrentUser();
@@ -20,9 +20,9 @@
         }
 
         vm.parseDate = function (date) {
-            return date.slice(0, 10);
+            return moment(date).format('MMMM Do YYYY');
         }
     }
 
-    angular.module('myApp.controllers').controller('PastEventsController', ['$scope', '$location', 'data', 'identity', 'notifier', PastEventsController]);
+    angular.module('myApp.controllers').controller('PastEventsController', ['$scope', '$location', 'data', 'identity', 'notifier','moment', PastEventsController]);
 }());

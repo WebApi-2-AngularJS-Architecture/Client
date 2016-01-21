@@ -4,18 +4,16 @@
     <div ng-if="vm.currentUser" class="col-lg-offset-3 col-lg-6">
         <div ng-repeat="event in vm.statistics" class="panel panel-info">
             <div class="panel-heading">
-                <h3 class="panel-title"><strong>{{event.BirthdayGuyUsername}}'s</strong> Birthday</h3>
+                <h3 class="panel-title">Stats for <strong>{{event.BirthdayGuyUsername}}'s</strong> Birthday</h3>
             </div>
             <div class="panel-body">
-                <div class="col-lg-12 text-center">
-                    <label>Created by: </label>
-                    <span>{{event.CreatorUsername}}</span>
-                </div>
-                <div class="col-lg-12 text-center">
-                    <label>Birthday Date:</label>
-                    <span>{{vm.parseDate(event.BirthdayDate)}}</span>
+                <div class="col-lg-12">
+                    <h4 class="text-center"><strong>Created by: </strong>{{event.CreatorUsername}}</h4>
                 </div>
                 <div class="col-lg-12">
+                    <h4 class="text-center"><strong>Birthday Date: </strong>{{vm.parseDate(event.BirthdayDate)}}</h4>
+                </div>
+                <div class="col-lg-12 header-line">
                     <div ng-repeat="(voteName, usernames) in event.Votes">
                         <h4 class="text-info"><strong>{{voteName}}: </strong><span class="label label-success">{{usernames.length}} votes</span></h4>
                         <span ng-repeat="username in usernames" class="text-primary" ng-if="$index < usernames.length-1">{{username}}, </span>

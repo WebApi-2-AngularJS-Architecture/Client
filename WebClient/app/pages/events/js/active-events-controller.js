@@ -1,7 +1,7 @@
 ﻿(function () {
     'use strict';
 
-    function ActiveEventsController($scope, $location, data, identity, notifier) {
+    function ActiveEventsController($scope, $location, data, identity, notifier, moment) {
         var vm = this;
 
         vm.currentUser = identity.getCurrentUser();
@@ -21,7 +21,7 @@
         }
 
         vm.parseDate = function (date) {
-            return date.slice(0, 10);
+            return moment(date).format('MMMM Do YYYY');
         }
 
         vm.vote = function (presentId, eventId) {
@@ -64,5 +64,5 @@
         }
     }
 
-    angular.module('myApp.controllers').controller('ActiveEventsController', ['$scope', '$location', 'data', 'identity', 'notifier', ActiveEventsController]);
+    angular.module('myApp.controllers').controller('ActiveEventsController', ['$scope', '$location', 'data', 'identity', 'notifier','moment', ActiveEventsController]);
 }());

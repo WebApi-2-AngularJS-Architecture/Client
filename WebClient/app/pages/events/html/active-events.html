@@ -4,28 +4,24 @@
     <div ng-if="vm.currentUser" class="col-lg-offset-3 col-lg-6">
         <div ng-repeat="event in vm.activeEvents" class="panel panel-info">
             <div class="panel-heading">
-                <h3 class="panel-title"><strong>{{event.BirthdayGuyUsername}}'s</strong> Birthday</h3>
+                <h3 class="panel-title">Pick a present for <strong>{{event.BirthdayGuyUsername}}'s</strong> Birthday</h3>
             </div>
             <div class="panel-body">
-                <form name="registrationForm" class="form-horizontal">
-                    <fieldset>
-                        <div class="col-lg-12">
-                            <label>Created by: </label>
-                            <span>{{event.CreatorUsername}}</span>
-                        </div>
-                        <div class="col-lg-12 birthday-date">
-                            <label>Birthday Date:</label>
-                            <span>{{vm.parseDate(event.BirthdayDate)}}</span>
-                        </div>
-                        <div ng-repeat="present in vm.availablePresents" class="row text-center">
-                            <a ng-click="vm.vote(present.Id, event.EventId)" class="btn btn-success" style="width: 60%;">{{present.Description}}</a>
-                            <div class="help-block"></div>
-                        </div>
-                        <div ng-if="vm.currentUser.userName === event.CreatorUsername" class="col-lg-offset-10 col-lg-2">
-                            <a class="btn btn-danger" ng-click="vm.closeEvent(event.EventId)">Close event</a>
-                        </div>
-                    </fieldset>
-                </form>
+                <div class="col-lg-12">
+                    <h4 class="text-center"><strong>Created by: </strong>{{event.CreatorUsername}}</h4>
+                </div>
+                <div class="col-lg-12">
+                    <h4 class="text-center"><strong>Birthday Date: </strong>{{vm.parseDate(event.BirthdayDate)}}</h4>
+                </div>
+                <div class="col-lg-12 header-line btn-vote">
+                    <div ng-repeat="present in vm.availablePresents" class="col-lg-12 text-center">
+                        <a ng-click="vm.vote(present.Id, event.EventId)" class="btn btn-success" style="width: 60%;">{{present.Description}}</a>
+                        <div class="help-block"></div>
+                    </div>
+                    <div ng-if="vm.currentUser.userName === event.CreatorUsername" class="col-lg-offset-10 col-lg-2">
+                        <a class="btn btn-danger" ng-click="vm.closeEvent(event.EventId)">Close event</a>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
