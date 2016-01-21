@@ -1,7 +1,7 @@
 ﻿(function () {
     'use strict';
 
-    function EventsController($scope, $location, data, identity, notifier) {
+    function ActiveEventsController($scope, $location, data, identity, notifier) {
         var vm = this;
 
         vm.currentUser = identity.getCurrentUser();
@@ -34,7 +34,7 @@
             data.post('api/Votes/Create', requestObject).then(function (result) {
                 notifier.info('Vote successful')
             }, function (err) {
-                notifier.error('Cannot vote twice');
+                notifier.error('Cannot vote twice for one event');
             });
         }
 
@@ -64,5 +64,5 @@
         }
     }
 
-    angular.module('myApp.controllers').controller('EventsController', ['$scope', '$location', 'data', 'identity', 'notifier', EventsController]);
+    angular.module('myApp.controllers').controller('ActiveEventsController', ['$scope', '$location', 'data', 'identity', 'notifier', ActiveEventsController]);
 }());

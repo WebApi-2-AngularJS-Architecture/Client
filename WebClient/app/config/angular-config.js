@@ -28,8 +28,12 @@
             })
             .when('/Events/Active', {
                 templateUrl: 'app/pages/events/html/active-events.html',
-                controller: 'EventsController'
+                controller: 'ActiveEventsController'
             })
+             .when('/Events/Past', {
+                 templateUrl: 'app/pages/events/html/past-events.html',
+                 controller: 'PastEventsController'
+             })
             .when('/unauthorized', {
                 template: '<h1 class="text-center">Unauthorized</h1>'
             })
